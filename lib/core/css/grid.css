@@ -29,7 +29,8 @@ div[class*="-column"] {
 .eight-columns {
   width: 66.6664%;
 }
-.nine-columns {
+.nine-columns,
+.three-fourths-column {
   width: 74.9997%;
 }
 .ten-columns {

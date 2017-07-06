@@ -1,15 +1,24 @@
 /* No media query */
+.good-background-color {
+  background-color: #4FAD4F;
+}
+.warn-background-color {
+  background-color: #FF7136;
+}
+.bad-background-color {
+  background-color: #F53F42;
+}
 /* Small devices (tablets, 768px and up) */
 /* Medium devices (desktops, 992px and up) */
 @media (min-width: 992px) {
   div[class*='navbar'] ul.navigation-grid li.navigation-item ul.sub-navigation-grid {
-    background-color: #aaaaaa;
+    background-color: #eaeaea;
     border-radius: 0px 0px 10px 10px;
     border: 2px solid #cdcdcd;
-    border-top: 3px solid #505050;
+    border-top: 3px solid #e0e0e0;
   }
   div[class*='navbar'] ul.navigation-grid li.navigation-item ul.sub-navigation-grid li.navigation-item h2 a {
-    color: #eaeaea;
+    color: #323232;
   }
 }
 /* Large devices (large desktops, 1200px and up) */

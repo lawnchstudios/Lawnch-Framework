@@ -43,13 +43,20 @@
                     
                     <li class='navigation-item'><h2><a href="">Item One</a></h2></li>
                     <li class='navigation-item'><h2><a href="">Item Two</a></h2></li>
-                    <li class='navigation-item'><h2><a href="">Item Three</a></h2></li>
+                    <li class='navigation-item'><h2><a href="">Item</a></h2>
+                        <ul class="sub-navigation-grid" >
+                            <li class="navigation-item"><h2><a href="">Sign Up</a></h2></li>
+                            <li class="navigation-item"><h2><a href="">Sign In</a></h2></li>
+                            <li class="navigation-item"><h2><a href="">My Account</a></h2></li>
+                        </ul>
+                    </li>
                     
                     <li class="navigation-item account-panel"><h2><a href="">Account</a></h2>
                         <ul class="sub-navigation-grid" >
                             <li class="navigation-item"><h2><a href="">Sign Up</a></h2></li>
                             <li class="navigation-item"><h2><a href="">Sign In</a></h2></li>
                             <li class="navigation-item"><h2><a href="">My Account</a></h2></li>
+                            <li class="navigation-item"><h2><a href="">Test Text Long Overflow</a></h2></li>
                         </ul>
                     </li>
                     
@@ -64,10 +71,103 @@
         <!-- #BEGIN SECTION MAIN# -->
         <main class="main">
             
+            <div id="showcase" class="showcase-container">
+                <div id="active-showcase">
+                    
+                </div>
+            </div>
+            
             <div class="page-wrapper">
+                
+                <div class="scroll-handle">
+                    
+                    
+                </div>
+                
+                
+                <div class="three-fourths-column">
+                
+                    <div class="section page-layout">
+                        <h1>Main Wrapper</h1>
+                        
+                        
+                        <div class="section">
+                            <h2>Button Elements</h2>
+                            
+                            <button class="good-background-color">Good</button>
+                            <button class="warn-background-color">Warn</button>
+                            <button class="bad-background-color">Bad</button>
+                            
+                            <br />
+                            <br />
+                            
+                            <h2>Circular Buttons</h2>
+                            
+                            <button class="button-circle good-background-color">Good</button>
+                            <button class="button-circle warn-background-color">Warn</button>
+                            <button class="button-circle bad-background-color">Bad</button>
+                            
+                            <br />
+                            <br />
+                            
+                            <h2>Button Elements</h2>
+                            
+                            <button class="good-background-color">Good</button>
+                            <button class="warn-background-color">Warn</button>
+                            <button class="bad-background-color">Bad</button>
+                            
+                            <br />
+                            <br />
+                            
+                            <h2>Circular Buttons</h2>
+                            
+                            <button class="button-circle good-background-color">Good</button>
+                            <button class="button-circle warn-background-color">Warn</button>
+                            <button class="button-circle bad-background-color">Bad</button>
+                            
+                            <br />
+                            <br />
+                            
+                        </div>
+                        
+                        
+                        
+                        
+                    </div>
+                    
+                    <div class="section page-layout">
+                        <h1>Alternative Elements</h1>
+                        
+                        <div class="section">
+                            
+                            <h2>Login Panel</h2>
+                            <div class="login-panel">
+                                <form>
+                                    <input type="text" name="username" placeholder="Username"/>
+                                    <input type="password" name="password" placeholder="Password"/>
+                                    <input class="button good-background-color" type="submit" value="Submit >>>"/>
+                                </form>
+                                
+                                
+                            </div>
+                        </div>
+                        
+                    </div>
+                    
+                
+                </div>
+                
+                <div class="one-fourth-column ">
+                    <div class="section page-layout">
+                        <h1>Side Bar</h1>
+                    </div>    
+                </div>
                
                 
             </div>
+            
+            
+            
             
         </main>
         
@@ -77,8 +177,8 @@
             
         </div>
         <!-- #END SECTION MAIN# -->
-        <script type="text/javascript" src="./lib/core/js/lawnch.js"></script>
-        <script type="text/javascript" src="./lib/core/js/nightshade.js"></script>
+        <!-- <script type="text/javascript" src="./lib/core/js/lawnch.js"></script>-->
+        <script type="text/javascript" src="./lib/core/js/nightshade.js"></script> 
     </body>
 </html>
 <!-- #END SECTION BODY# -->

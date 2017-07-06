@@ -31,7 +31,8 @@ div[class*="-column"] {
 .eight-columns {
   width: 66.6664%;
 }
-.nine-columns {
+.nine-columns,
+.three-fourths-column {
   width: 74.9997%;
 }
 .ten-columns {
@@ -313,6 +314,12 @@ div[class*="-column"] {
     height: 100VH;
   }
 }
+.button-circle {
+  border-radius: 10rem;
+  height: 3.14159672rem;
+  width: 3.14159672rem;
+  border: 1px solid #808080;
+}
 div[class*='navbar'] {
   z-index: 100;
   position: fixed;
@@ -348,29 +355,36 @@ div[class*='navbar'] ul.navigation-grid {
   float: left;
   left: 0;
   list-style: none;
+  font-style: italic;
 }
 div[class*='navbar'] ul.navigation-grid li.navigation-item {
+  width: 100%;
   display: none;
+  float: left;
+  position: relative;
 }
-div[class*='navbar'] ul.navigation-grid li.navigation-item:hover > ul {
-  display: inherit;
+div[class*='navbar'] ul.navigation-grid li.navigation-item:active,
+div[class*='navbar'] ul.navigation-grid li.navigation-item:hover > ul.sub-navigation-grid {
+  display: grid;
+  position: relative;
 }
 div[class*='navbar'] ul.navigation-grid li.navigation-item h2 {
+  line-height: 1.5rem;
   margin: 0;
 }
 div[class*='navbar'] ul.navigation-grid li.navigation-item h2 a {
-  color: #708090;
+  color: #323232;
   text-decoration: none;
-  font-style: italic;
 }
 div[class*='navbar'] ul.navigation-grid li.navigation-item h2 a:hover {
-  color: #eaeaea;
+  color: #708090;
 }
 div[class*='navbar'] ul.navigation-grid li.navigation-item ul {
   display: none;
 }
-div[class*='navbar'] ul.navigation-grid li.navigation-item ul:hover {
-  display: block;
+div[class*='navbar'] ul.navigation-grid li.navigation-item ul:active {
+  display: grid;
+  min-height: auto;
 }
 div[class*='navbar'] ul.navigation-grid li.navigation-item ul.sub-navigation-grid {
   margin-left: 1.5rem;
@@ -382,14 +396,14 @@ div[class*='navbar'] ul.navigation-grid li.navigation-item ul.sub-navigation-gri
 div[class*='navbar'] ul.navigation-grid li.navigation-item ul.sub-navigation-grid li.navigation-item h2 a {
   color: #708090;
   text-decoration: none;
-  font-style: italic;
+  font-style: normal;
 }
 div[class*='navbar'] ul.navigation-grid li.navigation-item ul.sub-navigation-grid li.navigation-item h2 a:hover {
   color: #eaeaea;
 }
 .navbar-top {
   top: 0;
-  background-color: #cdcdcd;
+  background-color: #eaeaea;
 }
 .navbar-bottom {
   bottom: 0;
@@ -398,17 +412,23 @@ div[class*='navbar'] ul.navigation-grid li.navigation-item ul.sub-navigation-gri
 #showcase {
   position: fixed;
   float: left;
-  width: 100%;
-  height: 100vh;
+  min-width: 100%;
+  min-height: 80vh;
 }
 #showcase #active-showcase {
+  background-image: url("../images/showcase/showcase.jpg");
   position: relative;
-  width: 100%;
-  height: 100vh;
+  min-width: 100%;
+  min-height: 80vh;
   z-index: -1000;
 }
 main.main .page-wrapper {
-  margin-top: 5rem;
+  position: absolute;
+  background-color: #eaeaea;
+  margin-top: 80vh;
+  min-width: 100%;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 main.main .page {
   float: left;
@@ -416,6 +436,17 @@ main.main .page {
   width: 100%;
   height: auto;
   top: 6rem;
+}
+section,
+.section {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+.page-layout {
+  border: 2px solid #cecece;
+  box-shadow: 2px 5px 10px #dedede;
 }
 .footer {
   width: 100%;
@@ -443,31 +474,40 @@ main.main .page {
     margin: 0;
     left: auto;
     right: 0;
-  }
-  div[class*='navbar'] ul.navigation-grid li.navigation-item {
-    display: block;
-    float: left;
-    line-height: 5rem;
     margin-left: 1rem;
     margin-right: 1rem;
+  }
+  div[class*='navbar'] ul.navigation-grid li.navigation-item {
+    width: auto;
+    display: block;
+    float: left;
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+  div[class*='navbar'] ul.navigation-grid li.navigation-item h2 {
+    line-height: 5rem;
+  }
+  div[class*='navbar'] ul.navigation-grid li.navigation-item:hover > ul.sub-navigation-grid {
+    display: grid;
+    position: fixed;
   }
   div[class*='navbar'] ul.navigation-grid li.navigation-item ul.sub-navigation-grid {
     top: 5rem;
     float: right;
     margin: 0;
     left: auto;
-    right: 0;
+    padding-left: 0;
   }
-  div[class*='navbar'] ul.navigation-grid li.navigation-item ul.sub-navigation-grid li.navigation-item:hover > ul {
-    display: inherit;
+  div[class*='navbar'] ul.navigation-grid li.navigation-item ul.sub-navigation-grid li.navigation-item h2 {
+    line-height: 2.5rem;
+    font-size: 1rem;
   }
   div[class*='navbar'] ul.navigation-grid li.navigation-item ul.sub-navigation-grid li.navigation-item h2 a {
-    color: #708090;
+    color: #323232;
     text-decoration: none;
-    font-style: italic;
   }
   div[class*='navbar'] ul.navigation-grid li.navigation-item ul.sub-navigation-grid li.navigation-item h2 a:hover {
-    color: #323232;
+    color: #708090;
   }
   div[class*='navbar'] ul.navigation-grid ul {
     display: none;
@@ -484,17 +524,26 @@ main.main .page {
 /* Medium devices (desktops, 992px and up) */
 /* Large devices (large desktops, 1200px and up) */
 /* No media query */
+.good-background-color {
+  background-color: #4FAD4F;
+}
+.warn-background-color {
+  background-color: #FF7136;
+}
+.bad-background-color {
+  background-color: #F53F42;
+}
 /* Small devices (tablets, 768px and up) */
 /* Medium devices (desktops, 992px and up) */
 @media (min-width: 992px) {
   div[class*='navbar'] ul.navigation-grid li.navigation-item ul.sub-navigation-grid {
-    background-color: #aaaaaa;
+    background-color: #eaeaea;
     border-radius: 0px 0px 10px 10px;
     border: 2px solid #cdcdcd;
-    border-top: 3px solid #505050;
+    border-top: 3px solid #e0e0e0;
   }
   div[class*='navbar'] ul.navigation-grid li.navigation-item ul.sub-navigation-grid li.navigation-item h2 a {
-    color: #eaeaea;
+    color: #323232;
   }
 }
 /* Large devices (large desktops, 1200px and up) */
@@ -520,4 +569,16 @@ main.main .page {
 .content-container {
   padding-left: 20px;
   padding-right: 20px;
+}
+.page-wrapper {
+  height: 100rem;
+}
+.login-panel form {
+  display: inline-block;
+  width: 20rem;
+}
+.login-panel form input {
+  float: left;
+  width: 100%;
+  margin: .5rem;
 }

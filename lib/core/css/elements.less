@@ -1,3 +1,24 @@
+button,
+.button,
+input[type=submit]{
+    
+    
+}
+.button-circle{
+    border-radius: 10rem;
+    height: 3.14159672rem;
+    width: 3.14159672rem;
+    
+    border: 1px solid #808080;
+    
+}
+
+
+
+
+
+
+
 div[class*='navbar']{
     z-index: 100;
     position: fixed;
@@ -47,23 +68,34 @@ div[class*='navbar']{
         left: 0;
         list-style: none;
         
+        font-style: italic;
+        
+        
+        
         li.navigation-item{
-            display: none;
             
-            &:hover > ul{
-                display: inherit;
+            width: 100%;
+            display: none;
+            float: left;
+            position: relative;
+            
+            &:active, 
+            &:hover > ul.sub-navigation-grid{
+                display: grid;
+                
+                position: relative;
             }
             
             h2{
+                line-height: 1.5rem;
                 margin: 0;
                 
                 a{
-                    color: #708090;
+                    color: #323232;
                     text-decoration: none;
-                    font-style: italic;
                     
                     &:hover{
-                        color: #eaeaea;
+                        color: #708090;
                         
                     }
                 } 
@@ -72,8 +104,9 @@ div[class*='navbar']{
             ul{
                 display: none;
                 
-                &:hover{
-                    display: block;
+                &:active{
+                    display: grid;
+                    min-height: auto; 
                     
                 }
                 
@@ -95,7 +128,7 @@ div[class*='navbar']{
                         a{
                             color: #708090;
                             text-decoration: none;
-                            font-style: italic;
+                            font-style: normal;
                             
                             &:hover{
                                 color: #eaeaea;
@@ -142,13 +175,15 @@ div[class*='navbar']{
     
     
     float: left;
-    width: 100%;
-    height: 100vh;
+    min-width: 100%;
+    min-height: @showcase-height;
     
     #active-showcase{
+        background-image: url("../images/showcase/showcase.jpg");
+        
         position: relative;
-        width: 100%;
-        height: 100vh;
+        min-width: 100%;
+        min-height: @showcase-height;
         z-index: -1000;
         
     }
@@ -160,7 +195,17 @@ div[class*='navbar']{
 main.main{
     
     .page-wrapper{
-        margin-top: @navbar-height;
+        position: absolute;
+        
+        background-color: #eaeaea;
+        
+        margin-top: @showcase-height;
+        
+        min-width: 100%;
+        
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        
         
     }
     
@@ -176,6 +221,22 @@ main.main{
         top: @navbar-height + 1rem;
         
     }
+    
+}
+
+section,
+.section{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    
+}
+
+
+.page-layout{
+    border: 2px solid #cecece;
+    box-shadow: 2px 5px 10px #dedede;
     
 }
 
@@ -235,43 +296,60 @@ main.main{
         
         
         ul.navigation-grid{
+            
             float: right;
             margin: 0;
             left: auto;
             right: 0;
+            margin-left: 1rem;
+            margin-right: 1rem;
             
             
             li.navigation-item{
+                width: auto;
                 display: block;
                 
                 float: left;
                 
-                line-height: 5rem;
+                
                 
                 margin-left: 1rem;
                 margin-right: 1rem;
                 
+                h2{
+                    line-height: 5rem;
+                    
+                }
+            
+                
+                &:hover > ul.sub-navigation-grid{
+                    display: grid;
+                    position: fixed;
+                }
+                
                 ul.sub-navigation-grid{
+                    
                     top: @navbar-height;
                     float: right;
                     margin: 0;
                     left: auto;
-                    right: 0;
+                    padding-left: 0;
                     
                     li.navigation-item{
                         
-                        &:hover > ul{
-                            display: inherit;
-                        }
+                    
+                        
+                        
                         
                         h2{
+                            line-height: 2.5rem;
+                            font-size: 1rem;
                             a{
-                                color: #708090;
+                                color: #323232;
                                 text-decoration: none;
-                                font-style: italic;
                                 
                                 &:hover{
-                                    color: #323232;
+                                    color: #708090;
                                     
                                 }
                             } 
